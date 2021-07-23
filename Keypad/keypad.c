@@ -1,7 +1,8 @@
+
 /*
  * @Author: Zhou Xiaozong
  * @Date: 2021-07-23 19:56:57
- * @LastEditTime: 2021-07-23 23:11:49
+ * @LastEditTime: 2021-07-24 02:11:00
  * @LastEditors: Please set LastEditors
  * @Description: This a lib for keypad with stm32 hal_library
  * @FilePath: \MyCode\Keypad\keypad.c
@@ -57,31 +58,31 @@ char KEY_SCAN(){
     KEY_CLO1_OUT_LOW;
     if ((Key_row_Num=KEY_ROW_SCAN()) != 0){
         while (KEY_ROW_SCAN()!=0);      //! 抬手检测
-        Key_Num = 0 + key_row_num;
+        Key_Num = 0 + Key_row_Num;
     }
     KEY_CLO1_OUT_HIGH;
 
     KEY_CLO2_OUT_LOW;
     if ((Key_row_Num=KEY_ROW_SCAN()) != 0){
         while (KEY_ROW_SCAN()!=0)
-        Key_Num = 4 + key_row_num;
+        Key_Num = 4 + Key_row_Num;
     }
     KEY_CLO2_OUT_HIGH;
 
     KEY_CLO3_OUT_LOW;
     if ((Key_row_Num=KEY_ROW_SCAN()) != 0){
         while (KEY_ROW_SCAN()!=0)
-        Key_Num = 8 + key_row_num;
+        Key_Num = 8 + Key_row_Num;
     }
     KEY_CLO3_OUT_HIGH;
 
     KEY_CLO4_OUT_LOW;
     if ((Key_row_Num=KEY_ROW_SCAN()) != 0){
         while (KEY_ROW_SCAN()!=0)
-        Key_Num = 12 + key_row_num;
+        Key_Num = 12 + Key_row_Num;
     }
     KEY_CLO4_OUT_HIGH;
-    return Key_num;
+    return Key_Num;
 }
 
 /**
@@ -89,8 +90,11 @@ char KEY_SCAN(){
  * @param {void}
  * @return {void}
  */
-__weak void HW_KEY_FUNCTION(void)
+char KEY_FUNCTION(void)
 {
-    /*
-    */
+    char num = KEY_SCAN();
+    if (0<num && num>17){
+    	return num;
+    }
+    return num;
 }
