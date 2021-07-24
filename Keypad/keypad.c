@@ -2,7 +2,7 @@
 /*
  * @Author: Zhou Xiaozong
  * @Date: 2021-07-23 19:56:57
- * @LastEditTime: 2021-07-24 12:11:44
+ * @LastEditTime: 2021-07-24 12:35:02
  * @LastEditors: Please set LastEditors
  * @Description: This a lib for keypad with stm32 hal_library
  * @FilePath: \MyCode\Keypad\keypad.c
@@ -55,33 +55,33 @@ int KEY_SCAN(){
     int Key_Num=0;         //*1-16对应的按键数
     int Key_row_Num=0;     //*行数
 
-    KEY_CLO1_OUT_LOW;
+    KEY_COL1_OUT_LOW;
     if ((Key_row_Num=KEY_ROW_SCAN()) != 0){
         while (KEY_ROW_SCAN()!=0);      //! 抬手检测
         Key_Num = 0 + Key_row_Num;
     }
-    KEY_CLO1_OUT_HIGH;
+    KEY_COL1_OUT_HIGH;
 
-    KEY_CLO2_OUT_LOW;
+    KEY_COL2_OUT_LOW;
     if ((Key_row_Num=KEY_ROW_SCAN()) != 0){
         while (KEY_ROW_SCAN()!=0)
         Key_Num = 4 + Key_row_Num;
     }
-    KEY_CLO2_OUT_HIGH;
+    KEY_COL2_OUT_HIGH;
 
-    KEY_CLO3_OUT_LOW;
+    KEY_COL3_OUT_LOW;
     if ((Key_row_Num=KEY_ROW_SCAN()) != 0){
         while (KEY_ROW_SCAN()!=0)
         Key_Num = 8 + Key_row_Num;
     }
-    KEY_CLO3_OUT_HIGH;
+    KEY_COL3_OUT_HIGH;
 
-    KEY_CLO4_OUT_LOW;
+    KEY_COL4_OUT_LOW;
     if ((Key_row_Num=KEY_ROW_SCAN()) != 0){
         while (KEY_ROW_SCAN()!=0)
         Key_Num = 12 + Key_row_Num;
     }
-    KEY_CLO4_OUT_HIGH;
+    KEY_COL4_OUT_HIGH;
     return Key_Num;
 }
 
