@@ -1,57 +1,18 @@
-/**
-  ******************************************************************************
-  * @file    tim.h
-  * @brief   This file contains all the function prototypes for
-  *          the tim.c file
-  ******************************************************************************
-  * @attention
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
-  *
-  ******************************************************************************
-  */
-/* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __TIM_H__
-#define __TIM_H__
-
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-/* Includes ------------------------------------------------------------------*/
+/*
+ * @Author: Zhou Xiaozong
+ * @Date: 2021-07-11 11:18:26
+ * @LastEditTime: 2021-07-24 21:39:08
+ * @LastEditors: Please set LastEditors
+ * @Description: used to genarate spwm wave with stm32
+ * @FilePath: \MyCode\Inc\spwm.h
+ */
+#ifndef __SPWM_H
+#define	__SPWM_H
+#include "stdint.h"
 #include "main.h"
 
-/* USER CODE BEGIN Includes */
-
-/* USER CODE END Includes */
-
-extern TIM_HandleTypeDef htim2;
-extern TIM_HandleTypeDef htim8;
-
-/* USER CODE BEGIN Private defines */
 extern u16 dc_cnt;
 extern u16 sinData[400];
-/* USER CODE END Private defines */
-
-void MX_TIM2_Init(void);
-void MX_TIM8_Init(void);
-
-void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
-
-/* USER CODE BEGIN Prototypes */
-
-/* USER CODE END Prototypes */
-
-#ifdef __cplusplus
-}
 #endif
 
-#endif /* __TIM_H__ */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+#endif

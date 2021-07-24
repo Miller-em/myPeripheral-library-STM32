@@ -2,7 +2,7 @@
 /*
  * @Author: Zhou Xiaozong
  * @Date: 2021-07-23 19:56:57
- * @LastEditTime: 2021-07-24 12:35:02
+ * @LastEditTime: 2021-07-24 13:51:55
  * @LastEditors: Please set LastEditors
  * @Description: This a lib for keypad with stm32 hal_library
  * @FilePath: \MyCode\Keypad\keypad.c
@@ -110,7 +110,7 @@ int KEY_FUNCTION(void)
     	case 7:
     		return 10;
     	case 8:
-    		return 11;
+    		return 14;
     	case 9:
     		return 3;
     	case 10:
