@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2021-07-23 19:56:39
+ * @LastEditTime: 2021-07-24 12:11:57
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \MyCode\Inc\keypad.h
+ */
 #ifndef __KEYPAD_H__
 #define __KEYPAD_H__
 
@@ -5,10 +13,10 @@
 #include "string.h"
 
 /*按键扫描函数*/
-char KEY_SCAN(void);
+int KEY_SCAN(void);
 /*按键行扫描函数*/
-char KEY_ROW_SCAN(void);
-char KEY_FUNCTION(void);
+int KEY_ROW_SCAN(void);
+int KEY_FUNCTION(void);
 
 /*行阵列致低*/
 #define KEY_CLO1_OUT_LOW    HAL_GPIO_WritePin(CLO1_GPIO_Port, CLO1_Pin, GPIO_PIN_RESET)
