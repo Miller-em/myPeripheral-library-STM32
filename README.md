@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-07-26 15:58:26
+ * @LastEditTime: 2021-07-30 16:16:01
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \MyCode\README.md
+-->
 # myPeripheral-library-STM32
 
 
@@ -11,4 +19,5 @@
 - PID（增量式，位置式）
 - 矩阵键盘
 - U8g2 OLED图形库
+- SVPWM
 
