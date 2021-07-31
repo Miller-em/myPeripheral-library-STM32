@@ -26,13 +26,13 @@ u16 ColorTab[5]={RED,GREEN,BLUE,YELLOW,BRED};//定义颜色数组
 void DrawTestPage(u8 *str)
 {
 //绘制固定栏up
-    LCD_Clear(WHITE);
+//    LCD_Clear(WHITE);
     LCD_Fill(0,0,lcddev.width,20,BLUE);
 //绘制固定栏down
     LCD_Fill(0,lcddev.height-20,lcddev.width,lcddev.height,BLUE);
     POINT_COLOR=WHITE;
     Gui_StrCenter(0,2,WHITE,BLUE,str,16,1);//居中显示
-    Gui_StrCenter(0,lcddev.height-18,WHITE,BLUE,"http://www.lcdwiki.com",16,1);//居中显示
+    Gui_StrCenter(0,lcddev.height-18,WHITE,BLUE,"Code by Xiaozhoua",16,1);//居中显示
 //绘制测试区域
 //LCD_Fill(0,20,lcddev.width,lcddev.height-20,WHITE);
 }

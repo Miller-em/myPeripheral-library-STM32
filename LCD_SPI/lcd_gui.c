@@ -371,8 +371,10 @@ void LCD_ShowChar(u16 x,u16 y,u16 fc, u16 bc, u8 num,u8 size,u8 mode)
         }
     }else//叠加方式
     {
+        LCD_Fill(x,y,x+size,y+size,bc);
         for(pos=0;pos<size;pos++)
         {
+
             if(size==12)temp=asc2_1206[num][pos];//调用1206字体
             else temp=asc2_1608[num][pos];		 //调用1608字体
             for(t=0;t<size/2;t++)

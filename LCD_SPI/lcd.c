@@ -14,7 +14,7 @@
 _lcd_dev lcddev;
 
 //画笔颜色,背景颜色
-u16 POINT_COLOR = 0x0000,BACK_COLOR = 0xFFFF;
+u16 POINT_COLOR = RED,BACK_COLOR = WHITE;
 u16 DeviceCode;
 
 /****************************************************************************

@@ -9,6 +9,8 @@
 #ifndef __TEST_H__
 #define __TEST_H__
 
+#include "main.h"
+
 void DrawTestPage(u8 *str);
 void Test_Color(void);
 void Test_FillRec(void);
