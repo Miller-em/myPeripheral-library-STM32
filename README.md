@@ -13,3 +13,4 @@
 - U8g2 OLED图形库
 - SVPWM
 - LCD-spi (模拟spi)
+- cJSON
