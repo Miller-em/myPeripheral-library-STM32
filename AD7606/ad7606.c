@@ -234,7 +234,7 @@ uint8_t GetAdcFormFifo(uint16_t *_usReadAdc)
 *	返 回 值: 无
 *********************************************************************************************************
 */
-void ad7606_StartRecord(uint32_t _ulFreq)
+void ad7606_StartRecord()
 {
     //ad7606_Reset();	/* 复位硬件 */
 
@@ -242,7 +242,6 @@ void ad7606_StartRecord(uint32_t _ulFreq)
 
     g_tAD.usRead = 0;				/* 必须在开启TIM2之前清0 */
     g_tAD.usWrite = 0;
-
 
     HAL_TIM_Base_Start_IT(&htim5);  /* 使能中断*/
 }
@@ -258,12 +257,18 @@ void ad7606_StartRecord(uint32_t _ulFreq)
 void ad7606_StopRecord(void)
 {
     /* TIM2 enable counter [允许tim2计数]*/
-    HAL_TIM_Base_Start_IT(&htim5);
+    HAL_TIM_Base_Stop_IT(&htim5);
 }
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
+    static int i = 0;
     if (htim == (&htim5)) {
         ad7606_IRQSrc();
+        i++;
+        if (i > 100){
+            HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
+            i = 0;
+        }
     }
 }
 

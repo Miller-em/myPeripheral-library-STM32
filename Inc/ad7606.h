@@ -53,7 +53,7 @@ typedef struct
 void ad7606_Reset(void);
 void bsp_SET_TIM2_FREQ(uint32_t _ulFreq);
 void bsp_InitAD7606(void);
-void ad7606_StartRecord(uint32_t _ulFreq);
+void ad7606_StartRecord(void);
 void ad7606_StopRecord(void);
 uint8_t GetAdcFormFifo(uint16_t *_usReadAdc);
 extern FIFO_T  g_tAD;
